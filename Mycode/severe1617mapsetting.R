@@ -34,7 +34,8 @@ tw.shp.old <- readShapeSpatial("twmap/gadm36_TWN_2.shp")
 tw.map.old <- fortify(tw.shp.old)
 tw.map <- fortify(tw.shp)
 
-own.df <- data.frame(name.en = tw.shp$NAME_2, name.zh = as.character(tw.shp$NL_NAME_2), id = 0:21)
+own.df <- data.frame(name.en = tw.shp$NAME_2, 
+                     name.zh = as.character(tw.shp$NL_NAME_2), id = 0:21)
 own.df[5,2] <- "台中市"
 own.df[6,2] <- "台南市"
 own.df[2,2] <- "連江縣"

@@ -37,8 +37,11 @@ for (i in 8:10) {
 table.month <- table(cases.all$發病月份)
 table.sex <- table(cases.all$性別)
 lbls.sex <- c("Male", "Female")
-slices <- c(round(table.sex[2] / length(cases.all$性別) * 100, 2), round(table.sex[1] / length(cases.all$性別) * 100, 2))
-chart.sex <- pie(slices, labels = paste0(lbls.sex, "\n", slices, "%"), col = rainbow(length(lbls.sex)), main = "Pie Chart of Sex", cex=1.5)
+slices <- c(round(table.sex[2] / length(cases.all$性別) * 100, 2), 
+            round(table.sex[1] / length(cases.all$性別) * 100, 2))
+chart.sex <- pie(slices, labels = paste0(lbls.sex, "\n", slices, "%"), 
+                 col = rainbow(length(lbls.sex)), 
+                 main = "Pie Chart of Sex", cex=1.5)
   
 
 chart.month <- ggplot(data = cases.all, aes(x = 發病月份)) +
